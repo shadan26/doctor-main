@@ -25,6 +25,7 @@ class Appointment {
     CollectionReference subCollectionRef =
     parentDocRef.collection('appointment');
     var newDocRef = await subCollectionRef.add({
+      'doctorname': data.doctorname,
       'userId': data.userId,
       'time': data.time,
       'date': data.date,
@@ -81,7 +82,7 @@ class Appointment {
     FirebaseFirestore.instance.collection("users").doc(data.userId);
 
     CollectionReference subCollectionRef =
-    parentDocRef.collection('notifications');
+    parentDocRef.collection('notification');
     var docRef = subCollectionRef.doc();
     subCollectionRef.add({
       'name': data.name,
@@ -101,6 +102,7 @@ class Appointment {
     parentDocRef.collection('notifications');
     var docRef = subCollectionRef.doc();
     subCollectionRef.add({
+      "doctorname":data.doctorname,
       'time': data.time,
       'date': data.date,
       'status': status,
@@ -119,7 +121,7 @@ class Appointment {
 
       QuerySnapshot subcollectionSnapshot = await userCollectionRef
           .doc(data.userId)
-          .collection('notification')
+          .collection('notifications')
           .get();
 
       var doctorCollectionRef =
@@ -161,7 +163,7 @@ class Appointment {
 
       QuerySnapshot subcollectionSnapshot = await userCollectionRef
           .doc(data.userId)
-          .collection('notifications')
+          .collection('notification')
           .get();
 
       var doctorCollectionRef =

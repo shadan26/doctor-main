@@ -43,7 +43,8 @@ class _NotificationUserState extends State<NotificationUser> {
               child: FutureBuilder<List<NotificationData>>(
                 future: Appointment.instance.getTOUserNotification(
                     AppointmentData(
-                        doctoruuid: doctormodell?.uid ,
+                      //doctorname: modell?.uid,
+                    doctoruuid: usermodel?.uid,
                         time: usermodel?.date,
                         userId: FirebaseAuth.instance.currentUser?.uid)),
                 builder: (context, snapshot) {

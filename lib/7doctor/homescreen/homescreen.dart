@@ -28,6 +28,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../notfication/notficationNurse.dart';
 import '../../notfication/notification.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -69,13 +70,26 @@ class HomeScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                              const NotificationUser(),
+                               NotificationUser(),
                             ));
                       },
                       icon: Icon(
                         Icons.notifications,
                         size: 30,
-                      ))
+                      )),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => NotificationUserForNurse(),
+                          ),
+                        );
+                      },
+                      icon: Icon(
+                        Icons.home,
+                        size: 30,
+                      )),
                 ],
               ),
               bottomNavigationBar: BottomNavigationBar(

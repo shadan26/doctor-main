@@ -1,7 +1,9 @@
 import 'dart:core';
 
 class AppointmentData {
+
   final String ?doctoruuid;
+  final String ?doctorname;
   final String ?userId;
   final String ?date;
   final String? time;
@@ -13,6 +15,7 @@ class AppointmentData {
 
   AppointmentData(
       {
+        this.doctorname,
         this.isOpened,
         this.isViewed,
         this.appointmentId,
@@ -31,7 +34,7 @@ class AppointmentDataNerse{
   final String ?userId;
   final String ?doctorName;
   final String ?appointmentId;
-  final String name;
+  final String ?name;
   final String ?doctoruuid;
   final String ?gender;
   final double? latitude;
@@ -46,7 +49,7 @@ class AppointmentDataNerse{
         this.doctorName,
         this.status,
         this.userId,
-        required this.name,
+        this.name,
       this.gender,
          this.latitude,
          this.longitude,

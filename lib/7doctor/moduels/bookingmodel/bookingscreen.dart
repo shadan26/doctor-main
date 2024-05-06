@@ -429,9 +429,10 @@ class _BookScreenState extends State<BookScreen> {
                               var time = bookTimeArray[selectedTimeIndex];
                               var doctorId = widget.uid;
                               var userId = FirebaseAuth.instance.currentUser?.uid;
+                              var doctorname=widget.name;
 
 
-                              var data = AppointmentData(status: "initial",time: time, date: date, doctoruuid: doctorId, userId: userId);
+                              var data = AppointmentData(status: "initial",time: time, date: date, doctoruuid: doctorId, userId: userId,doctorname: doctorname);
                               Appointment.instance.sendPushNotificationTopic(widget.token);
                               Appointment.instance.bookAppointment(data);
                                   // if(widget[widget.uid].status=="nurse")

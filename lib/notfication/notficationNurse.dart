@@ -43,7 +43,9 @@ class _NotificationUserState extends State<NotificationUserForNurse> {
               child: FutureBuilder<List<NotificationDataFromNurse>>(
                 future: Appointment.instance.getTOUserNotificationFromNurse(
                     AppointmentDataNerse(
-                        userId: FirebaseAuth.instance.currentUser?.uid, name: cubit.doctorModel!.uid!, doctoruuid: cubit.doctorModel!.uid!,)),
+                        userId: FirebaseAuth.instance.currentUser?.uid,
+                      // name: cubit.doctorModel!.uid!, doctoruuid: cubit.doctorModel?.uid!,
+                     )),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return CircularProgressIndicator();
@@ -80,7 +82,7 @@ class _NotificationUserState extends State<NotificationUserForNurse> {
                                       'longitude: ${notificationData.longitude ?? "not given"}'),
                                   const SizedBox(width: 10),
                                   Text(
-                                      'doctor: ${data.doctorName?? "not given"}'),
+                                      'doctor: ${data.doctorName?? "Dana"}'),
 
                                 ],
                               ),
